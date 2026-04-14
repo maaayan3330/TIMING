@@ -6,9 +6,7 @@ export default function AddItem() {
       <Navbar />
 
       <main className="mx-auto max-w-3xl px-6 py-16">
-        <h1 className="mb-6 text-4xl font-black text-red-600">
-          הוספת פריט
-        </h1>
+        <h1 className="mb-6 text-4xl font-black text-red-600">הוספת פריט</h1>
 
         <div className="rounded-2xl bg-white p-6 shadow-sm">
           <input

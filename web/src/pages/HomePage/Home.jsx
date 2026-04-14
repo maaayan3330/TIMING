@@ -1,25 +1,76 @@
 import Navbar from "../Navbar";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { motion } from "framer-motion";
+import styles from "./Home.module.css";
+
+const steps = [
+  "מוסיפים מוצר שרוצים לעקוב אחריו",
+  "TIMING עוקב אחרי המחיר לאורך הזמן",
+  "ברגע שיש ירידה — מקבלים התראה למייל",
+];
 
 export default function Home() {
   return (
-    <div dir="rtl" className="min-h-screen bg-[#f8f3ea] text-gray-900">
+    <div dir="rtl" className={styles.page}>
       <Navbar />
 
-      <main className="flex min-h-[calc(100vh-88px)] items-center justify-center px-6">
-        <section className="mx-auto max-w-4xl text-center">
-          <h1 className="mb-6 text-6xl font-black tracking-[0.18em] text-red-600 md:text-8xl">
-            TIMING
-          </h1>
-          <p
-            dir="ltr"
-            className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-red-500"
-            >
-            Smart shopping, perfect timing.
-            </p>
+      <main className={styles.main}>
+        <section className={styles.hero}>
+          <h1 className={styles.title}>TIMING</h1>
 
-          {/* <p className="mx-auto max-w-2xl text-xl font-medium leading-relaxed text-gray-700 md:text-2xl">
-            Track prices. Buy at the right moment.
-          </p> */}
+          <p dir="ltr" className={styles.subtitle}>
+            Smart shopping, perfect timing.
+          </p>
+
+          <div className={styles.buttons}>
+            <Link to="/add-item" className={styles.primaryButton}>
+              הוסף מוצר למעקב
+              <ArrowLeft size={18} />
+            </Link>
+
+            <Link to="/my-items" className={styles.secondaryButton}>
+              הפריטים שלי
+            </Link>
+          </div>
+
+          <div className={styles.stats}>
+            <div className={styles.statItem}>
+              <p className={styles.statNumber}>24/7</p>
+              <p className={styles.statText}>מעקב רציף</p>
+            </div>
+
+            <div className={styles.statItem}>
+              <p className={styles.statNumber}>100%</p>
+              <p className={styles.statText}>חינם למשתמש</p>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.stepsSection}>
+          <p className={styles.stepsLabel}>איך זה עובד</p>
+
+          <div className={styles.stepsContainer}>
+            {steps.map((text, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.25 }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
+                className={styles.step}
+              >
+                <span className={styles.stepNumber}>{index + 1}</span>
+                <p className={styles.stepText}>{text}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className={styles.bottomCta}>
+            <Link to="/registration" className={styles.ctaButton}>
+              רוצה? הירשמי עכשיו
+            </Link>
+          </div>
         </section>
       </main>
     </div>
