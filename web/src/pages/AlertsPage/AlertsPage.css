@@ -1,0 +1,151 @@
+.alerts-page {
+  min-height: 100vh;
+  background: #f8f3ea;
+  color: #1f2937;
+}
+
+.alerts-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.alerts-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 26px;
+}
+
+.alerts-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.alerts-title {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  font-weight: 900;
+  color: #111827;
+}
+
+.alerts-title-icon {
+  color: #dc2626;
+  stroke-width: 2.2;
+}
+
+.alerts-subtitle {
+  margin: 10px 0 0;
+  font-size: 1.05rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.alerts-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 70px;
+  background: transparent;
+}
+
+.alerts-summary-badge {
+  min-width: 38px;
+  height: 30px;
+  border-radius: 999px;
+  background: #f3ede6;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0 10px;
+}
+
+.alerts-summary-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #111827;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.alerts-summary-icon {
+  color: #8b8b8b;
+  stroke-width: 2;
+}
+
+.alerts-empty-state {
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.alerts-empty-icon {
+  font-size: 4.3rem;
+  line-height: 1;
+  margin-bottom: 24px;
+  filter: grayscale(0.25);
+}
+
+.alerts-empty-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #111827;
+}
+
+.alerts-empty-text {
+  margin: 14px 0 0;
+  font-size: 1.2rem;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.alerts-primary-btn {
+  margin-top: 28px;
+  border: none;
+  border-radius: 16px;
+  background: #dc2626;
+  color: #ffffff;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(220, 38, 38, 0.16);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.alerts-primary-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .alerts-main {
+    padding: 32px 16px 60px;
+  }
+
+  .alerts-summary {
+    margin-bottom: 50px;
+  }
+
+  .alerts-summary-text {
+    font-size: 1.2rem;
+  }
+
+  .alerts-empty-title {
+    font-size: 1.65rem;
+  }
+
+  .alerts-empty-text {
+    font-size: 1rem;
+  }
+}
